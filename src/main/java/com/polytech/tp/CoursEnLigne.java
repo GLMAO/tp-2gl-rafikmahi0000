@@ -1,21 +1,20 @@
 package com.polytech.tp;
 
 public class CoursEnLigne extends CoursDecorator {
-    CoursEnLigne(ICours cours) {
-        //TODO: Implémenter le reste ...
+
+    public CoursEnLigne(ICours cours) {
+        super(cours);
     }
 
     @Override
     public String getDescription() {
-        // TODO Auto-generated method stub
-        
-        return null;
+        // Ajoute le suffixe "(En ligne)" à la description existante
+        return coursDecorated.getDescription() + " (En ligne)";
     }
 
     @Override
     public double getDuree() {
-        // TODO Auto-generated method stub
-        
-        return 0;
-    };
+        // La durée reste la même que celle du cours de base
+        return coursDecorated.getDuree();
+    }
 }
